@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <style>
+    :root {
+      --aler-color: rgb(211, 37, 37);
+      --aler-w-color: whitesmoke;
+    }
+    i {
+      cursor: pointer;
+      transition-property: transform;
+      transition-duration: 0.3;
+    }
+    
+    i:hover {
+      transform: scale(1.15);
+    }
+    .alertEr {
+      animation-name: alert;
+      animation-duration: 0.5s;
+      /* animation-fill-mode: forwards; */
+      animation-timing-function: ease-in-out;
+    }
+    @keyframes alert {
+      25% {
+        color: var(--aler-color);
+        border-bottom-color: var(--aler-color);
+      }
+      50% {
+        color: var(--aler-w-color);
+        border-bottom-color: var(--aler-w-color);
+      }
+      100% {
+        color: var(--aler-color);
+        border-bottom-color: var(--aler-color);
+      }
+    }
+
+  </style>
+  <title>Tracalorie | Meal & Calorie Tracker</title>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav>
+    <div class="nav-wrapper blue">
+      <div class="container">
+        <a href="#" class="brand-logo center">Tracalorie</a>
+        <ul class="right">
+          <li><a href="#" class="clear-btn btn blue lighten-3" id="clear-all">Clear All</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <br>
+
+  <div class="container">
+    <!-- Form Card -->
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title">Add Meal / Food Item</span>
+        <form class="col" id="form">
+          <div class="row">
+            <div class="input-field col s6">
+              <input type="text" placeholder="Add Item" id="item-name">
+              <label for="item-name">Meal</label>
+            </div>
+            <div class="input-field col s6">
+                <input type="text" placeholder="Add Calories" id="item-calories">
+                <label for="item-calories">Calories</label>
+            </div>
+            <button class="add-btn btn blue darken-3" id="add-btn" style="display: inline-block;"><i class="fa fa-plus"></i> Add Meal</button>
+            
+            <button class="update-btn btn orange" id="update" style="display: none;"><i class="fa fa-pencil-square-o"></i> Update Meal</button>
+            <button class="delete-btn btn red" id="dlt" style="display: none;"><i class="fa fa-remove"></i> Delete Meal</button>
+            
+            <button class="back-btn btn grey pull-right" id="back" style="display: none;"><i class="fa fa-chevron-circle-left"></i> Back</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Calorie Count -->
+    <h3 class="center-align">Total Calories: <span class="total-calories" id="total-calories">0</span></h3>
+
+    <!-- Item List -->
+    <ul id="item-list" class="collection">
+<!--       
+      <li class="collection-item" id="item-0">
+        <strong>Steak Dinner: </strong> <em>1200 Calories</em>
+        <a href="#" class="secondary-content">
+          <i class="fa fa-pencil"></i>
+        </a>
+      </li>
+      <li class="collection-item" id="item-0">
+        <strong>Cookie: </strong> <em>400 Calories</em>
+        <a href="#" class="secondary-content">
+          <i class="fa fa-pencil"></i>
+        </a>
+      </li>
+      <li class="collection-item" id="item-0">
+        <strong>Eggs: </strong> <em>300 Calories</em>
+        <a href="#" class="secondary-content">
+          <i class="fa fa-pencil"></i>
+        </a>
+      </li>
+    -->
+    </ul>
+  </div>
+
+
+  <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>    
+  <script src="./app_new.js"></script>
+  <!-- <script src="./easyHTTP.js"></script>
+  <script src="./database.json"></script> -->
+</body>
+</html>
